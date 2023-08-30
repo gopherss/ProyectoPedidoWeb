@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios'
@@ -25,7 +26,7 @@ const Menu = (_) => {
                 <div className="p-4  border-2 border-gray-200 rounded-lg">
 
                     <h1 className='text-4xl font-extrabold text-gray-900'>
-                        Menu del día
+                        Menú del día
                     </h1>
 
                     <NavLink

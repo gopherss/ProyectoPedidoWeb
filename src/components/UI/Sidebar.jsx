@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import io from 'socket.io-client';
 
@@ -11,6 +12,18 @@ const SideBar = (_) => {
         return _ => {
             socket.off('producto', producto => console.log(producto));
         }
+    }, []);
+
+    const [pedidos, guardarPedidos] = useState([]);
+
+    const obtenerPedidos = async () => {
+        const url = 'http://localhost:3000/obtener-pedido-no-completado';
+        const respuesta = await axios.get(url);
+        guardarPedidos(respuesta.data);
+    }
+
+    useEffect(() => {
+        obtenerPedidos();
     }, []);
 
 
@@ -73,7 +86,7 @@ const SideBar = (_) => {
                                 <img src="https://www.svgrepo.com/show/195021/mailbox.svg" alt="pedidos icono" className='flex-shrink-0 w-8 h-8' />
                                 <span className="flex-1 ml-3 whitespace-nowrap">Pedidos</span>
                                 <span className="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">
-                                    3
+                                    {pedidos.length}
                                 </span>
                             </NavLink>
                         </li>
