@@ -59,7 +59,7 @@ const NuevoPlatillo = (_) => {
                                 console.log(datos);
                                 socket.emit('producto', datos);
 
-                                const url = 'http://127.0.0.1:3000/guardar-producto';
+                                const url = 'https://restaurante.fly.dev/guardar-producto';
                                 const forms = new FormData();
 
                                 for (const key in datos) {
@@ -140,13 +140,13 @@ const NuevoPlatillo = (_) => {
                                         name='categoria'
                                     >
                                         <option value="">SELECCIONAR...</option>
-                                        <option value="desayuno">Desayuno</option>
-                                        <option value="almuerzo">Almuerzo</option>
-                                        <option value="cena">Cena</option>
-                                        <option value="bebidas">Bebidas</option>
-                                        <option value="postres">Postres</option>
-                                        <option value="piqueos">Piqueos</option>
-                                        <option value="ensaladas">Ensaladas</option>
+                                        <option value="desayunos">desayunos</option>
+                                        <option value="almuerzos">almuerzo</option>
+                                        <option value="cenas">cenas</option>
+                                        <option value="bebidas">bebidas</option>
+                                        <option value="postres">postres</option>
+                                        <option value="piqueos">piqueos</option>
+                                        <option value="ensaladas">ensaladas</option>
                                     </Field>
 
                                     <ErrorMessage
@@ -166,7 +166,7 @@ const NuevoPlatillo = (_) => {
                                         id='imagen'
                                         type='file'
                                         name='imagen'
-                                        accept='image/png, image/PNG,image/jpeg, image/JPEG image/jpg'
+                                        accept='image/png, image/PNG,image/jpeg, image/JPEG image/jpg image/webp'
                                         className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
                                         onChange={e => setFieldValue('imagen', e.target.files[0])}
                                     />

@@ -6,7 +6,7 @@ const Pedidos = (_) => {
     const [pedidos, guardarPedidos] = useState([]);
 
     const obtenerPedidos = async () => {
-        const url = 'http://localhost:3000/obtener-pedido-no-completado';
+        const url = 'https://restaurante.fly.dev/obtener-pedido-no-completado';
         const respuesta = await axios.get(url);
         guardarPedidos(respuesta.data);
     }

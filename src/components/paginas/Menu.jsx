@@ -10,7 +10,7 @@ const Menu = (_) => {
 
 
     const obtenerProducto = async () => {
-        const url = 'http://localhost:3000/obtener-producto';
+        const url = 'https://restaurante.fly.dev/obtener-producto';
         const respuesta = await axios.get(url);
         guardarPlatillos(respuesta.data)
     }
