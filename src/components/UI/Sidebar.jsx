@@ -20,6 +20,8 @@ const SideBar = (_) => {
         const url = 'http://localhost:3000/obtener-pedido-no-completado';
         const respuesta = await axios.get(url);
         guardarPedidos(respuesta.data);
+
+        console.log(pedidos.length);
     }
 
     useEffect(() => {

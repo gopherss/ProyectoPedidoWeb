@@ -8,7 +8,7 @@ const Pedido = ({ pedido }) => {
 
     const definirTiempo = async _id => {
         try {
-            const url = `http://localhost:3000/actualiza-tiempo/${_id}`;
+            const url = `https://restaurante.fly.dev/actualiza-tiempo/${_id}`;
             await axios.patch(url, { tiempoentrega: parseInt(tiempoEntrega) });
         } catch (error) {
             console.log(error);
